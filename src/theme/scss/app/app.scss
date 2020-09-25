@@ -1,0 +1,11 @@
+.navbar-open {
+	content: get-svg-icon('svg-navbar-open', #ffffff);
+	height: 30px;
+	vertical-align: middle;
+}
+
+.navbar-close {
+	content: get-svg-icon('svg-navbar-close', #ffffff);
+	height: 30px;
+	vertical-align: middle;
+}

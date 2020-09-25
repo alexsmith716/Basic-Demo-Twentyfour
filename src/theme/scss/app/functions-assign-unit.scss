@@ -1,0 +1,52 @@
+// ================================================================
+// ==================== Staying unit-clean! =======================
+// ================================================================
+
+@function testForActualNumber($testNumber) {
+	@if (type-of($testNumber) != number) {
+		@warn '`#{$testNumber}` needs to be a NUMBER.';
+		@return 1;
+	}
+	@return $testNumber;
+}
+
+// ----------------------------------------------------------------
+
+@function assign-unit-rem($number) {
+
+	$testedNumber: testForActualNumber($number);
+	$returnedValue: $testedNumber * 1rem;
+
+	@return $returnedValue;
+}
+
+// ----------------------------------------------------------------
+
+@function assign-unit-pixel($number) {
+
+	$testedNumber: testForActualNumber($number);
+	$returnedValue: $testedNumber * 16px;
+
+	@return $returnedValue;
+}
+
+// ----------------------------------------------------------------
+
+@function calculate-pixels-to-rem($number) {
+
+	$testedNumber: testForActualNumber($number);
+	$calcToNumberRem: $testedNumber / 16;
+	$returnedValue: $calcToNumberRem * 1rem;
+
+	@return $returnedValue;
+}
+
+// ----------------------------------------------------------------
+
+@function number-to-pixels($number) {
+
+	$testedNumber: testForActualNumber($number);
+	$returnedValue: $testedNumber * 1px;
+
+	@return $returnedValue;
+}

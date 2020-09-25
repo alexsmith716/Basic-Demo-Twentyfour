@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkTest Link changes the class when hovered 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h2>
+      LinkTest
+    </h2>
+    <div
+      class="row"
+    >
+      <div
+        class="col-lg-12 mb-4"
+      >
+        <div
+          class="bg-color-ivory container-padding-border-radius-1 text-break"
+        >
+          <div>
+            <p>
+              state variable "onMouseHoverStatus" state: 
+              normal
+            </p>
+          </div>
+          <div>
+            <a
+              class="normal"
+              data-testid="hover-anchorlink"
+              href="https://github.com/"
+            >
+              Github
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LinkTest Link changes the class when hovered 2`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h2>
+      LinkTest
+    </h2>
+    <div
+      class="row"
+    >
+      <div
+        class="col-lg-12 mb-4"
+      >
+        <div
+          class="bg-color-ivory container-padding-border-radius-1 text-break"
+        >
+          <div>
+            <p>
+              state variable "onMouseHoverStatus" state: 
+              hovered
+            </p>
+          </div>
+          <div>
+            <a
+              class="hovered"
+              data-testid="hover-anchorlink"
+              href="https://github.com/"
+            >
+              Github
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`LinkTest Link changes the class when hovered 3`] = `
+<div>
+  <div
+    class="container"
+  >
+    <h2>
+      LinkTest
+    </h2>
+    <div
+      class="row"
+    >
+      <div
+        class="col-lg-12 mb-4"
+      >
+        <div
+          class="bg-color-ivory container-padding-border-radius-1 text-break"
+        >
+          <div>
+            <p>
+              state variable "onMouseHoverStatus" state: 
+              normal
+            </p>
+          </div>
+          <div>
+            <a
+              class="normal"
+              data-testid="hover-anchorlink"
+              href="https://github.com/"
+            >
+              Github
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,53 @@
+@import '../../../theme/scss/app/functions-assign-unit.scss';
+@import '../../../theme/scss/app/svg-icons.scss';
+@import '../../../theme/scss/app/functions-svgs.scss';
+
+.svgBirthdayCakeX {
+	content: get-svg-icon('svg-birthday-cake', #ff1493);
+	height: 66px;
+	vertical-align: middle;
+	padding-right: .25rem;
+	padding-left: .25rem;
+}
+
+.svgBirthdayCake {
+	content: get-svg-icon('svg-birthday-cake', #ff1493);
+	height: 66px;
+	padding-right: .25rem;
+	padding-left: .25rem;
+}
+
+.svgExampleItems {
+	display: flex;
+	align-items: center;
+}
+
+.fontSizeThirtyTwoPixels {
+	color: #00cd00;
+	font-size: calculate-pixels-to-rem(32);
+}
+
+.fontSizeTwoRem {
+	color: #00cd00;
+	font-size: 2rem;
+}
+
+.fontSizeTwentyFourPixels {
+	color: #00cd00;
+	font-size: 24px;
+}
+
+.fontSizeOneAndHalfRem {
+	color: #00cd00;
+	font-size: 1.5rem;
+}
+
+.fontSizeSixteenPixels {
+	color: #00cd00;
+	font-size: 16px;
+}
+
+.fontSizeOneRem {
+	color: #00cd00;
+	font-size: 1rem;
+}
