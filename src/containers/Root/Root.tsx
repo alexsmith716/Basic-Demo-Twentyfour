@@ -7,24 +7,33 @@ import { ThemeProvider } from 'styled-components';
 // import * as Styles from './styles';
 import { Global } from '../../styled';
 import config from '../../../config/config';
+import { useTheme } from '../../styled/ThemeContext';
+
+import { AppTheme } from '../../styled';
 
 interface RootProps {
 	route: any
 };
 
 // interface RootState {
-// 	toggleTheme: any;
+//  toggleTheme: any;
 // };
 
 export const Root = ({route}: RootProps) => {
 
+	const themeMode = useTheme();
+
+	const themeModeMode = AppTheme.theme[`${themeMode.mode}`]
+
 	return (
 		<>
 			<HelmetProvider>
-				<Helmet {...config.app.head} /> 
-					<Global.GlobalStyle />
-					{/* ------------- App ------------- */}
-					{renderRoutes(route.routes)}
+				<Helmet {...config.app.head} />
+					<ThemeProvider theme={themeModeMode}>  
+						<Global.GlobalStyle />
+						{/* ------------- App ------------- */}
+						{renderRoutes(route.routes)}
+					</ThemeProvider>
 			</HelmetProvider>
 		</>
 	);

@@ -3,7 +3,7 @@ import { Colors } from '../../styled/Colors';
 import { Link } from 'react-router-dom';
 
 const NavBarBGTheme = css`
-  background-color: #009900;
+  background-color: ${props => props.theme.navBarColor};
 `
 
 export const NavBar = styled.div`
