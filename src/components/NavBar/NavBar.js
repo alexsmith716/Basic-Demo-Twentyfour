@@ -4,7 +4,12 @@ import { toggleTheme } from '../../redux/modules/toggleTheme';
 import { navLinks } from './navLinks';
 import * as Styles from './styles';
 
+import { useTheme } from '../../styled/ThemeContext';
+
+
 export const NavBar = () => {
+
+	const themeMode = useTheme();
 
 	// const toggledTheme = useSelector(state => state.toggleTheme.theme);
 	// const dispatch = useDispatch();
@@ -34,8 +39,9 @@ export const NavBar = () => {
 	);
 
 	const doThemeToggle = () => {
-	  // dispatch(toggleTheme(toggledTheme.themeType));
-	  setClicked(false);
+		// dispatch(toggleTheme(toggledTheme.themeType));
+		themeMode.toggle()
+		setClicked(false);
 	}
 
 	return (

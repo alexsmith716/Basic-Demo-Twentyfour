@@ -32,17 +32,17 @@ import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache, ApolloLink
 import { onError } from '@apollo/client/link/error';
 import { getDataFromTree, getMarkupFromTree } from '@apollo/client/react/ssr';
 
-//	provide for client ("to avoid network calls and mocking data"):
-//	https://github.com/apollographql/apollo-client/blob/master/docs/source/api/link/apollo-link-schema.md
-//	https://graphql.org/graphql-js/graphql/#entry-point
+//  provide for client ("to avoid network calls and mocking data"):
+//  https://github.com/apollographql/apollo-client/blob/master/docs/source/api/link/apollo-link-schema.md
+//  https://graphql.org/graphql-js/graphql/#entry-point
 
-//	When performing SSR on the same server, you can use this library to avoid making network calls
-//	build "new SchemaLink({ schema })"
+//  When performing SSR on the same server, you can use this library to avoid making network calls
+//  build "new SchemaLink({ schema })"
 
-//	pre-fetch needed data (graphql/REST) and build a schema
-//	pre-fetch needed data (graphql/REST) (SchemaLink) on server for SSR
+//  pre-fetch needed data (graphql/REST) and build a schema
+//  pre-fetch needed data (graphql/REST) (SchemaLink) on server for SSR
 
-//	https://github.com/apollographql/apollo-server
+//  https://github.com/apollographql/apollo-server
 
 // -------------------------------------------------------------------
 
@@ -100,7 +100,7 @@ export default ({ clientStats }) => async (req, res) => {
 	const preloadedState = initialStatePreloaded(req);
 
 	const providers = {
-		//	app: createApp(req),
+		//  app: createApp(req),
 		client: apiClient(req),
 	};
 
@@ -118,22 +118,22 @@ export default ({ clientStats }) => async (req, res) => {
 
 	const sheet = new ServerStyleSheet();
 
-	//	Composing a link chain:
-	//	Each link should represent a self-contained modification to a GraphQL operation.
-	//	By composing these links into a chain, you can create an arbitrarily complex model for your client's data flow.
+	//  Composing a link chain:
+	//  Each link should represent a self-contained modification to a GraphQL operation.
+	//  By composing these links into a chain, you can create an arbitrarily complex model for your client's data flow.
 
-	//	There are two forms of link composition: additive and directional.
-	//		* Additive composition involves combining a set of links into a serially executed chain.
-	//		* Directional composition involves branching to one of multiple links, depending on the details of an operation.
-	//	Directional composition: defined with the "split" method of an ApolloLink instance
+	//  There are two forms of link composition: additive and directional.
+	//    * Additive composition involves combining a set of links into a serially executed chain.
+	//    * Directional composition involves branching to one of multiple links, depending on the details of an operation.
+	//  Directional composition: defined with the "split" method of an ApolloLink instance
 
-	//	https://www.apollographql.com/docs/react/v3.0-beta/api/link/apollo-link-rest/
-	//	setup "RestLink" instance:
-	//	specify endpoint to use in the rest directive:
+	//  https://www.apollographql.com/docs/react/v3.0-beta/api/link/apollo-link-rest/
+	//  setup "RestLink" instance:
+	//  specify endpoint to use in the rest directive:
 
-	//	https://github.com/afuh/rick-and-morty-api
-	//	REST:			https://rickandmortyapi.com/api/
-	//	GRAPHQL:	https://rickandmortyapi.com/graphql/
+	//  https://github.com/afuh/rick-and-morty-api
+	//  REST:     https://rickandmortyapi.com/api/
+	//  GRAPHQL:  https://rickandmortyapi.com/graphql/
 
 	defineHeaders();
 
@@ -143,11 +143,11 @@ export default ({ clientStats }) => async (req, res) => {
 		fetch: fetch,
 	});
 
-	//	const restLink = new RestLink({
-	//		uri: 'https://rickandmortyapi.com/api/',
-	//		// endpoints: '/api',
-	//		customFetch: fetch,
-	//	});
+	//  const restLink = new RestLink({
+	//    uri: 'https://rickandmortyapi.com/api/',
+	//    // endpoints: '/api',
+	//    customFetch: fetch,
+	//  });
 
 	const cache = new InMemoryCache();
 
@@ -167,14 +167,14 @@ export default ({ clientStats }) => async (req, res) => {
 		}
 	});
 
-	//	"httpLink" is terminating so must be last, while retry & error wrap the links to their right
-	//	State & context links should happen before (to the left of) restLink
-	//	one of "uri" or "link" is required; if both are specified, "link" will take precedence
+	//  "httpLink" is terminating so must be last, while retry & error wrap the links to their right
+	//  State & context links should happen before (to the left of) restLink
+	//  one of "uri" or "link" is required; if both are specified, "link" will take precedence
 	const link = ApolloLink.from([
-		//	authLink,
+		//  authLink,
 		// restLink,
 		errorLink,
-		//	retryLink,
+		//  retryLink,
 		httpLink,
 	]);
 
@@ -201,72 +201,72 @@ export default ({ clientStats }) => async (req, res) => {
 		// ==========================================================================
 		// ==========================================================================
 
-		//	https://www.apollographql.com/docs/tutorial/local-state/
-		//	https://www.apollographql.com/docs/react/data/local-state/
-		//	https://www.apollographql.com/docs/react/v3.0-beta/data/local-state/
+		//  https://www.apollographql.com/docs/tutorial/local-state/
+		//  https://www.apollographql.com/docs/react/data/local-state/
+		//  https://www.apollographql.com/docs/react/v3.0-beta/data/local-state/
 
-		//	implement a client side GraphQL:
-		//		1) apollo-link-rest
-		//		2) local resolvers
+		//  implement a client side GraphQL:
+		//    1) apollo-link-rest
+		//    2) local resolvers
 
-		//	Tools to manage local state:
-		//		How to store and query local data in the Apollo cache:
-		//			https://www.apollographql.com/docs/tutorial/local-state/
+		//  Tools to manage local state:
+		//    How to store and query local data in the Apollo cache:
+		//      https://www.apollographql.com/docs/tutorial/local-state/
 
-		//	"local resolvers":
-		//		The same mechanisms that exist in a GraphQL server (schema paired with resolvers) are used for managing 'InMemoryCache'
-		//		result closely resembles a server-side GraphQL solution
-		//	resolver: to implement the local state update as a GraphQL mutation
-		//	return the same type of data specified in the schema or a promise for that data
+		//  "local resolvers":
+		//    The same mechanisms that exist in a GraphQL server (schema paired with resolvers) are used for managing 'InMemoryCache'
+		//    result closely resembles a server-side GraphQL solution
+		//  resolver: to implement the local state update as a GraphQL mutation
+		//  return the same type of data specified in the schema or a promise for that data
 
-		//	write a client schema and resolvers for your local data
-		//	query (client schema/local data) with @client directive
+		//  write a client schema and resolvers for your local data
+		//  query (client schema/local data) with @client directive
 
-		//	-----------------------
-		//	TODO:
-		//	write local schema to be directly portable to a server-side     (as if existed server-side)
-		//	write local resolvers that fetch requested data from a REST API (wrapping a REST API on the client)
-		//	-----------------------
+		//  -----------------------
+		//  TODO:
+		//  write local schema to be directly portable to a server-side     (as if existed server-side)
+		//  write local resolvers that fetch requested data from a REST API (wrapping a REST API on the client)
+		//  -----------------------
 
-		//	@client directive: query and update cache (InMemoryCache)
+		//  @client directive: query and update cache (InMemoryCache)
 
-		//	https://rickandmortyapi.com/documentation/
-		//	'https://rickandmortyapi.com/api/episode/'
-		//	`https://rickandmortyapi.com/api/character/${ids}`
-		//	`https://rickandmortyapi.com/api/episode/${id}`
-		//	https://rickandmortyapi.com/api/character/6
-		//	https://rickandmortyapi.com/api/character/?name=rick&status=alive
-		//	https://rickandmortyapi.com/api/location/3,21
+		//  https://rickandmortyapi.com/documentation/
+		//  'https://rickandmortyapi.com/api/episode/'
+		//  `https://rickandmortyapi.com/api/character/${ids}`
+		//  `https://rickandmortyapi.com/api/episode/${id}`
+		//  https://rickandmortyapi.com/api/character/6
+		//  https://rickandmortyapi.com/api/character/?name=rick&status=alive
+		//  https://rickandmortyapi.com/api/location/3,21
 
-		//	const queryCharacter = await clientApollo.query({query: gql`
-		//		query Character($id: ID) {
-		//			character(id: "1") @rest(type: "Post", path: "character/1") {
-		//				id
-		//				name
-		//				status
-		//				species
-		//				type
-		//				gender
-		//				origin {
-		//					name
-		//					type
-		//					dimension
-		//				}
-		//				location {
-		//					name
-		//					type
-		//					dimension
-		//				}
-		//				image
-		//				episode {
-		//					name
-		//					episode
-		//				}
-		//			}
-		//		}
-		//	`});
+		//  const queryCharacter = await clientApollo.query({query: gql`
+		//    query Character($id: ID) {
+		//      character(id: "1") @rest(type: "Post", path: "character/1") {
+		//        id
+		//        name
+		//        status
+		//        species
+		//        type
+		//        gender
+		//        origin {
+		//          name
+		//          type
+		//          dimension
+		//        }
+		//        location {
+		//          name
+		//          type
+		//          dimension
+		//        }
+		//        image
+		//        episode {
+		//          name
+		//          episode
+		//        }
+		//      }
+		//    }
+		//  `});
 
-		//	console.log('>>>> SERVER > clientApollo.query > REST: ', queryCharacter);
+		//  console.log('>>>> SERVER > clientApollo.query > REST: ', queryCharacter);
 
 		clientApollo.writeQuery({
 			query: gql`
@@ -279,19 +279,19 @@ export default ({ clientStats }) => async (req, res) => {
 			},
 		});
 
-		//	const q = await clientApollo.query({
-		//		fetchPolicy: 'network-only',
-		//		query: gql`
-		//			query {
-		//				character
-		//			}`
-		//	}).then(result => console.log(result))
+		//  const q = await clientApollo.query({
+		//    fetchPolicy: 'network-only',
+		//    query: gql`
+		//      query {
+		//        character
+		//      }`
+		//  }).then(result => console.log(result))
 
 		// ==========================================================================
 		// ==========================================================================
 
-		//	prefetch data (load data into cache): "client.query"
-		//	set "initialState" of data
+		//  prefetch data (load data into cache): "client.query"
+		//  set "initialState" of data
 		// -------------------------------------------------------------------
 		// const qq = await clientApollo.query({ query: GetCharacter });
 		// const qq = await clientApollo.query({ query: GetReviews, variables: { episode: "EMPIRE" } });
@@ -302,10 +302,10 @@ export default ({ clientStats }) => async (req, res) => {
 
 		// console.log('>>>> SERVER > clientApollo.query: ', JSON.stringify(qq));
 
-		//	Object.keys(q).forEach(key => {
-		//		const k = q[key];
-		//		console.log('>>>> SERVER > clientApollo.query > Object.keys().forEach(): ', k);
-		//	});
+		//  Object.keys(q).forEach(key => {
+		//    const k = q[key];
+		//    console.log('>>>> SERVER > clientApollo.query > Object.keys().forEach(): ', k);
+		//  });
 
 		console.log('>>>> SERVER > InMemoryCache > CACHE > cache.extract() 2: ', cache.extract());
 
@@ -337,12 +337,12 @@ export default ({ clientStats }) => async (req, res) => {
 		//   you can return the stringified results in the response:
 
 		// getMarkupFromTree:
-		//		returns a promise for the generated HTML, so no an extra render to get the HTML
+		//    returns a promise for the generated HTML, so no an extra render to get the HTML
 
 		// await GraphQL data coming from the API server
 		// determines which queries are needed to render, then fetch them all
 		await getDataFromTree(component);
-		//	await Promise.all([getDataFromTree(component)]);
+		//  await Promise.all([getDataFromTree(component)]);
 
 		const content = ReactDOM.renderToString(sheet.collectStyles(component));
 		const assets = flushChunks(clientStats, { chunkNames: flushChunkNames() });
@@ -366,8 +366,8 @@ export default ({ clientStats }) => async (req, res) => {
 
 		const graphqlInitialState = serialize(clientApollo.extract());
 
-		//	const styledComponents = sheet.getStyleTags();	// returns a string of multiple `<style>` tags
-		const styledComponents = sheet.getStyleElement();	// returns an array of React elements > ReactDOM.renderToString(sC)
+		//  const styledComponents = sheet.getStyleTags();  // returns a string of multiple `<style>` tags
+		const styledComponents = sheet.getStyleElement(); // returns an array of React elements > ReactDOM.renderToString(sC)
 
 		console.log('>>>> SERVER > InMemoryCache > CACHE >>>>>>>>>>>>>>>>>>>: ', cache);
 

@@ -30,6 +30,8 @@ import configureStore from './redux/configureStore';
 import isOnline from './utils/isOnline';
 import './utils/navbarDOMCollapse';
 
+import { ThemeContext } from './styled/ThemeContext';
+
 const persistConfig = {
 	key: 'root',
 	storage: localForage,
@@ -79,37 +81,37 @@ const providers = {
 		persistConfig,
 	});
 
-	//	const httpLink = createHttpLink({
-	//		uri: 'http://localhost:4000/graphql',
-	//	});
+	//  const httpLink = createHttpLink({
+	//    uri: 'http://localhost:4000/graphql',
+	//  });
 
-	//	const restLink = new RestLink({ 
-	//		uri: 'https://rickandmortyapi.com/api/',
-	//	});
+	//  const restLink = new RestLink({ 
+	//    uri: 'https://rickandmortyapi.com/api/',
+	//  });
 
-	//	const errorLink = onError(({ graphQLErrors, networkError }) => {
-	//		if (graphQLErrors) {
-	//			graphQLErrors.map(({ message, locations, path }) =>
-	//				console.log(`>>>> CLIENT > [GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,),
-	//			);
-	//		}
+	//  const errorLink = onError(({ graphQLErrors, networkError }) => {
+	//    if (graphQLErrors) {
+	//      graphQLErrors.map(({ message, locations, path }) =>
+	//        console.log(`>>>> CLIENT > [GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,),
+	//      );
+	//    }
 
-	//		if (networkError) {
-	//			console.log(`>>>> CLIENT > [Network error]: ${networkError}`);
-	//		}
-	//	});
+	//    if (networkError) {
+	//      console.log(`>>>> CLIENT > [Network error]: ${networkError}`);
+	//    }
+	//  });
 
-	//	const link = ApolloLink.from([
-	//		// restLink,
-	//		errorLink,
-	//		httpLink,
-	//	]);
+	//  const link = ApolloLink.from([
+	//    // restLink,
+	//    errorLink,
+	//    httpLink,
+	//  ]);
 
-	//	const clientApollo = new ApolloClient({
-	//		ssrMode: false,
-	//		cache: new InMemoryCache().restore(window.__APOLLO_STATE__),
-	//		link,
-	//	});
+	//  const clientApollo = new ApolloClient({
+	//    ssrMode: false,
+	//    cache: new InMemoryCache().restore(window.__APOLLO_STATE__),
+	//    link,
+	//  });
 
 	const triggerHooks = async (_routes, pathname) => {
 		// console.log('>>>> CLIENT > triggerHooks > store.getState() 1111 ######: ', store.getState());
@@ -135,10 +137,12 @@ const providers = {
 			<HelmetProvider>
 				<Provider store={store} {...providers}>
 					<Router history={history}>
-						<ScrollToTop />
-						<RouterTrigger triggerProp={(pathname) => triggerHooks(_routes, pathname)}>
-							{renderRoutes(_routes)}
-						</RouterTrigger>
+						<ThemeContext>
+							<ScrollToTop />
+							<RouterTrigger triggerProp={(pathname) => triggerHooks(_routes, pathname)}>
+								{renderRoutes(_routes)}
+							</RouterTrigger>
+						</ThemeContext>
 					</Router>
 				</Provider>
 			</HelmetProvider>

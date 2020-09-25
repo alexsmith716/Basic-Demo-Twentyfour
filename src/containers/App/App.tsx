@@ -14,7 +14,7 @@ interface AppProps {
 };
 
 //  interface AppState {
-//  	toggleTheme: any;
+//    toggleTheme: any;
 //  };
 
 // export const ThemeContext = React.createContext(null);
@@ -24,20 +24,20 @@ export const App = ({route}: AppProps)  => {
 	// const toggledTheme = useSelector((state: AppState) => state.toggleTheme.theme);
 
 	return (
-    <>
-    	{/* ------------- Navbar ------------- */}
-    	<NavBar />
-    	{/* ------------- Main Content ------------- */}
-    	{renderRoutes(route.routes)}
-    	{/* --------------- Svg Examples ----------------- */}
-    	{/* <SvgExample /> */}
-    	{/* --------------- InfoBar ---------------- */}
-    	<InfoBar />
-    	{/* ------------- Device State ----------- */}
-    	<DeviceState />
-    	{/* --------------- Footer ----------------- */}
-    	<Footer />
-    	{/* --------------- Modals ----------------- */}
-    </>
+		<>
+			{/* ------------- Navbar ------------- */}
+			<NavBar />
+			{/* ------------- Main Content ------------- */}
+			{renderRoutes(route.routes)}
+			{/* --------------- Svg Examples ----------------- */}
+			{/* <SvgExample /> */}
+			{/* --------------- InfoBar ---------------- */}
+			<InfoBar />
+			{/* ------------- Device State ----------- */}
+			<DeviceState />
+			{/* --------------- Footer ----------------- */}
+			<Footer />
+			{/* --------------- Modals ----------------- */}
+		</>
 	);
 }
