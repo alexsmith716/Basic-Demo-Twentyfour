@@ -13,9 +13,9 @@ interface AppProps {
 	route: any;
 };
 
-//  interface AppState {
-//    toggleTheme: any;
-//  };
+//	interface AppState {
+//		toggleTheme: any;
+//	};
 
 // export const ThemeContext = React.createContext(null);
 

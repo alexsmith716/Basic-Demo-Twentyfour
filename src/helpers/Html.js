@@ -1,10 +1,11 @@
 import React from 'react';
+import serialize from 'serialize-javascript';
 import config from '../../config/config';
 
-function Html({ assets, styledComponents, content, store, graphqlState }) {
+const Html = ({ assets, store, content, styledComponents, graphqlState }) => {
 
 	return (
-		<>
+		<html lang="en-US">
 			<head>
 
 				<meta httpEquiv="content-type" content="text/html; charset=UTF-8" />
@@ -45,7 +46,7 @@ function Html({ assets, styledComponents, content, store, graphqlState }) {
 				{/* (>>>>>>> STORE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<) */}
 				{store && (
 					<script
-						dangerouslySetInnerHTML={{ __html: `window.__PRELOADED__=true; window.REDUX_DATA=${store};`}}
+						dangerouslySetInnerHTML={{__html: `window.__PRELOADED__=true;window.REDUX_DATA=${serialize(store.getState())};`}}
 						charSet="UTF-8"
 					/>
 				)}
@@ -53,7 +54,7 @@ function Html({ assets, styledComponents, content, store, graphqlState }) {
 				{/* (>>>>>>> GRAPHQL <<<<<<<<<<<<<<<<<<<<<<<<<<<<<) */}
 				{graphqlState && (
 					<script
-						dangerouslySetInnerHTML={{ __html: `window.__APOLLO_STATE__=${graphqlState};`}}
+						dangerouslySetInnerHTML={{ __html: `window.__APOLLO_STATE__=${serialize(graphqlState)};`}}
 						charSet="UTF-8"
 					/>
 				)}
@@ -65,7 +66,7 @@ function Html({ assets, styledComponents, content, store, graphqlState }) {
 					))}
 
 			</body>
-		</>
+		</html>
 	);
 };
 

@@ -7,7 +7,6 @@ import { renderRoutes } from 'react-router-config';
 import { flushChunkNames } from 'react-universal-component/server';
 import flushChunks from 'webpack-flush-chunks';
 import { HelmetProvider } from 'react-helmet-async';
-import serialize from 'serialize-javascript';
 import fetch from 'node-fetch';
 import { ServerStyleSheet, ThemeProvider } from 'styled-components';
 
@@ -41,8 +40,6 @@ import { getDataFromTree, getMarkupFromTree } from '@apollo/client/react/ssr';
 
 //  pre-fetch needed data (graphql/REST) and build a schema
 //  pre-fetch needed data (graphql/REST) (SchemaLink) on server for SSR
-
-//  https://github.com/apollographql/apollo-server
 
 // -------------------------------------------------------------------
 
@@ -362,9 +359,7 @@ export default ({ clientStats }) => async (req, res) => {
 			return res.redirect(301, location.pathname);
 		}
 
-		const reduxStore = serialize(store.getState());
-
-		const graphqlInitialState = serialize(clientApollo.extract());
+		const graphqlState = clientApollo.extract();
 
 		//  const styledComponents = sheet.getStyleTags();  // returns a string of multiple `<style>` tags
 		const styledComponents = sheet.getStyleElement(); // returns an array of React elements > ReactDOM.renderToString(sC)
@@ -372,7 +367,7 @@ export default ({ clientStats }) => async (req, res) => {
 		console.log('>>>> SERVER > InMemoryCache > CACHE >>>>>>>>>>>>>>>>>>>: ', cache);
 
 		const html = (
-			<Html assets={assets} styledComponents={styledComponents} content={content} store={reduxStore} graphqlState={graphqlInitialState} />
+			<Html assets={assets} styledComponents={styledComponents} content={content} store={store} graphqlState={graphqlState} />
 		);
 
 		const ssrHtml = `<!DOCTYPE html><html lang="en">${ReactDOM.renderToString(html)}</html>`;

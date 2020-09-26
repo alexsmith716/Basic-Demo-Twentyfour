@@ -26,15 +26,13 @@ export const Root = ({route}: RootProps) => {
 	const themeModeMode = AppTheme.theme[`${themeMode.mode}`];
 
 	return (
-		<>
-			<HelmetProvider>
-				<Helmet {...config.app.head} />
-					<ThemeProvider theme={themeModeMode}>  
-						<Global.GlobalStyle />
-						{/* ------------- App ------------- */}
-						{renderRoutes(route.routes)}
-					</ThemeProvider>
-			</HelmetProvider>
-		</>
+		<HelmetProvider>
+			<Helmet {...config.app.head} />
+				<ThemeProvider theme={themeModeMode}>  
+					<Global.GlobalStyle />
+					{/* ------------- App ------------- */}
+					{renderRoutes(route.routes)}
+				</ThemeProvider>
+		</HelmetProvider>
 	);
 };
