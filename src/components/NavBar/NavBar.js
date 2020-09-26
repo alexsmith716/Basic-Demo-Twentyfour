@@ -40,7 +40,7 @@ export const NavBar = () => {
 
 	const doThemeToggle = () => {
 		// dispatch(toggleTheme(toggledTheme.themeType));
-		themeMode.toggle()
+		themeMode.toggleTheme()
 		setClicked(false);
 	}
 

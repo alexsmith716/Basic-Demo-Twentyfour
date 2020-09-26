@@ -6,7 +6,7 @@ const defaultMode = 'default';
 
 export const ManageThemeContext = React.createContext({
 	mode: defaultMode,
-	toggle: () => { }
+	toggleTheme: () => {},
 });
 
 export const useTheme = () => useContext(ManageThemeContext);
@@ -30,12 +30,12 @@ export const ThemeContext = ({ children }) => {
 		[themeModeState]
 	);
 
-	const toggle = () => {
+	const toggleTheme = () => {
 		setThemeModeState({ mode: (themeModeState.mode === 'dark' ? `default` : `dark`) });
 	}
 
 	return (
-		<ManageThemeContext.Provider value={{ mode: themeModeState.mode, toggle: toggle }}>
+		<ManageThemeContext.Provider value={{ mode: themeModeState.mode, toggleTheme: toggleTheme }}>
 			{children}
 		</ManageThemeContext.Provider>
 	);

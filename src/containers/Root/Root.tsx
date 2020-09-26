@@ -23,7 +23,7 @@ export const Root = ({route}: RootProps) => {
 
 	const themeMode = useTheme();
 
-	const themeModeMode = AppTheme.theme[`${themeMode.mode}`]
+	const themeModeMode = AppTheme.theme[`${themeMode.mode}`];
 
 	return (
 		<>
