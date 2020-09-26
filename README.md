@@ -17,13 +17,6 @@ server:
 	});
 `
 
-NOT WORKING `Uncaught SyntaxError`:
-`
-	if (__DISABLE_SSR__) {
-		return hydrate(assets);
-	}
-`
-
 "Book Card" > "Bookshelf"
 
 API > GET /books:
