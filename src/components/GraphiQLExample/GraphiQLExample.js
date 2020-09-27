@@ -9,7 +9,7 @@ import {
 } from '@apollo/client';
 
 import {
-  fragmentTypeDroid,
+	fragmentTypeDroid,
 } from "../../graphql/fragments/fragments";
 
 

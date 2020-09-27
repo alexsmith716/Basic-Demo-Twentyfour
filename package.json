@@ -7,7 +7,6 @@
 	"license": "MIT",
 	"scripts": {
 		"prod": "NODE_ENV=production PORT=8080 APIPORT=3030 node ./bin/main.js",
-		"clean:all": "yarn clean",
 		"clean": "rimraf build/dist build/server build/service-worker.js ./analyzers",
 		"test": "IS_CLIENT=false jest src",
 		"check-types-t": "tsc --traceResolution",
@@ -30,8 +29,8 @@
 		"core-js": "^3.6.5",
 		"cross-fetch": "^3.0.5",
 		"express": "^4.17.1",
-		"graphiql": "^1.0.3",
-		"graphql": "^14.7.0",
+		"graphiql": "^1.0.5",
+		"graphql": "^15.3.0",
 		"history": "^4.10.1",
 		"isomorphic-unfetch": "^3.0.0",
 		"localforage": "^1.9.0",
@@ -88,7 +87,7 @@
 		"css-loader": "^4.3.0",
 		"cssnano": "^4.1.10",
 		"cssnano-webpack-plugin": "^1.0.3",
-		"eslint": "^7.9.0",
+		"eslint": "^7.10.0",
 		"eslint-config-airbnb": "^18.2.0",
 		"eslint-config-prettier": "^6.12.0",
 		"eslint-loader": "^4.0.2",
@@ -122,10 +121,10 @@
 		"stylelint-config-styled-components": "^0.1.1",
 		"stylelint-processor-styled-components": "^1.10.0",
 		"stylelint-scss": "^3.18.0",
-		"typescript": "^4.0.2",
+		"typescript": "^4.0.3",
 		"url-loader": "^4.1.0",
 		"webpack": "^4.44.2",
-		"webpack-cli": "^4.0.0-beta.9",
+		"webpack-cli": "^3.3.12",
 		"webpackbar": "^4.0.0"
 	}
 }
