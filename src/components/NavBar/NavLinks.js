@@ -6,7 +6,7 @@ export const navLinks = [
 	},
 	{
 		title: 'GraphqlPage',
-		url: '/stickyfooter',
+		url: '/graphqlpage',
 		linkType: 'navLink',
 	},
 	{

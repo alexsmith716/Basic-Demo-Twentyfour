@@ -4,7 +4,7 @@ import { Home } from './containers/Home';
 import { NotFound } from './containers/NotFound';
 
 import About from './containers/About/Loadable';
-// import GraphqlPage from './containers/GraphqlPage/Loadable';
+import GraphqlPage from './containers/GraphqlPage/Loadable';
 // import GridLayout from './containers/GridLayout/Loadable';
 
 import { preloadData as preloadDataApp } from './containers/App/preloadData';
@@ -43,7 +43,15 @@ const routes = [{
 					title: 'Basic Demo Twentythree',
 					description: 'Component About'
 				}
-			}, {
+      }, {
+        path: '/graphqlpage',
+        exact: true,
+        component: GraphqlPage,
+        meta: {
+          title: 'Basic Demo Twentythree',
+          description: 'Component GraphqlPage'
+        }
+      }, {
 				path: '*',
 				component: NotFound,
 				meta: {

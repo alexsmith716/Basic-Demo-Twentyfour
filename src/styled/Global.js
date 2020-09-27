@@ -155,10 +155,16 @@ export const GlobalStyle = createGlobalStyle`
 		align-items: center;
 	}
 
+	.container-padding-border-radius-1 {
+		padding: 10px 10px;
+		border: 1px solid #090;
+		border-radius: 3px;
+	}
+
 	.container-padding-border-radius-2 {
-		padding: calculate-pixels-to-rem(10) calculate-pixels-to-rem(10);
-		border: calculate-pixels-to-rem(2) solid #b0c4de;
-		border-radius: calculate-pixels-to-rem(3);
+		padding: 10px 10px;
+		border: 2px solid #b0c4de;
+		border-radius: 3px;
 	}
 
 	// ========================================
@@ -509,67 +515,67 @@ export const GlobalStyle = createGlobalStyle`
 	.bg-lightskyblue-1 {
 		background-color: #b0e2ff;
 	}
-	
+
 	.bg-lavender {
 		background-color: #e6e6fa;
 	}
-	
+
 	.bg-syracuse-orange {
 		background-color: $color-syracuse-orange;
 	}
-	
+
 	.bg-rutgers-scarlet {
 		background-color: $color-rutgers-scarlet;
 	}
-	
+
 	.bg-color-ivory {
 		background-color: #fffff0;
 	}
-	
+
 	.bg-color-yellow {
 		background-color: #ff0;
 	}
-	
+
 	.bg-color-purple {
 		background-color: #9b30ff;
 	}
-	
+
 	.bg-color-slategray {
 		background-color: #c6e2ff;
 	}
-	
+
 	.bg-color-olivedrab-2 {
 		background-color: #b3ee3a;
 	}
-	
+
 	.bg-color-mediumorchid-1 {
 		background-color: #e066ff;
 	}
-	
+
 	.bg-color-turquoise-1 {
 		background-color: #00f5ff;
 	}
-	
+
 	.bg-color-darkgoldenrod-1 {
 		background-color: #ffb90f;
 	}
-	
+
 	.bg-color-lightcoral {
 		background-color: #f08080;
 	}
-	
+
 	.bg-color-mediumspringgreen {
 		background-color: #00fa9a;
 	}
-	
+
 	.bg-color-plum {
 		background-color: #dda0dd;
 	}
-	
+
 	.bg-color-banana {
 		background-color: #e3cf57;
 	}
-	
+
 	.bg-color-cadetblue {
 		background-color: #8ee5ee;
 	}
