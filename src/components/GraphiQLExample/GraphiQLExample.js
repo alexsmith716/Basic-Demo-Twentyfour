@@ -7,6 +7,7 @@ import {
 	useMutation,
 	useApolloClient,
 } from '@apollo/client';
+import * as Styles from './styles';
 
 import {
 	fragmentTypeDroid,
@@ -15,11 +16,9 @@ import {
 
 export const GraphiQLExample = () => {
 
-	const styles = require('./scss/GraphiQLExample.scss');
-
 	return (
 
-		<div className={styles.graphiQLExample}>
+		<Styles.GraphiQLExample>
 
 			<GraphiQL
 				fetcher={async graphQLParams => {
@@ -38,7 +37,6 @@ export const GraphiQLExample = () => {
 				}}
 			/>
 
-		</div>
-
+		</Styles.GraphiQLExample>
 	);
 }
