@@ -64,7 +64,7 @@ export function load() {
 	// let location = 'https://www.metaweather.com/api/location/2459115/';
 	return {
 		types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
-		promise: () => postRequestConcatExportASYNC('resolve', true, 250)
+		promise: () => postRequestConcatExportASYNC('resolve', true, 550)
 			.then(
 				result => {
 					console.log('>>>>>>>>>>>>>>>> INFOALERTTHREE > load() > THEN > RESULT: ', result);

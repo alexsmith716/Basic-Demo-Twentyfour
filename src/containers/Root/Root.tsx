@@ -4,7 +4,6 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useSelector } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
-// import * as Styles from './styles';
 import { Global } from '../../styled';
 import config from '../../../config/config';
 import { useTheme } from '../../styled/ThemeContext';
@@ -15,9 +14,6 @@ interface RootProps {
 	route: any
 };
 
-// interface RootState {
-//  toggleTheme: any;
-// };
 
 export const Root = ({route}: RootProps) => {
 
