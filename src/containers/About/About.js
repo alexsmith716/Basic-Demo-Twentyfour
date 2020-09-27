@@ -45,7 +45,7 @@ const About = () => {
 
 				{/* ---------------------------------------------- */}
 
-				<Styles.SubContainer className="row-grid grid-six mb-5">
+				<div className="row-grid grid-six bg-lightskyblue-1 mb-5">
 
 					<div className="col-grid mb-4">
 						<img className="img-fluid rounded" src={aboutImageMain} alt="" />
@@ -60,7 +60,7 @@ const About = () => {
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
 					</div>
-				</Styles.SubContainer>
+				</div>
 
 				{/* ---------------------------------------------- */}
 
