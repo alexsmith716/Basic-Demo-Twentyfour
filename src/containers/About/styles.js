@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { AppColors } from '../../styled';
+import { colors } from '../../styled/Colors';
 
 export const AboutStyled = styled.div`
-	// background-color: ${AppColors.colors.lightskyblue};
+	background-color: ${colors.lightskyblue};
 `;
 
 export const SubContainer = styled.div`
-	background-color: ${AppColors.colors.lightskyblue};
+	background-color: ${colors.lightskyblue};
 `;

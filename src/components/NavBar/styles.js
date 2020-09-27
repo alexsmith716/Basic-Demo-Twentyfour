@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Colors } from '../../styled/Colors';
+import { colors } from '../../styled/Colors';
 import { Link } from 'react-router-dom';
 
 const NavBarBGTheme = css`
