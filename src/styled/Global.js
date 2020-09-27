@@ -31,11 +31,6 @@ export const GlobalStyle = createGlobalStyle`
 		overflow: visible;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
-		margin-top: 0;
-		// margin-bottom: 0.5rem;
-	}
-
 	img {
 		vertical-align: middle;
 		border-style: none;
@@ -541,7 +536,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	.bg-color-slategray {
-		background-color: #c6e2ff;
+		background-color: #708090;
 	}
 
 	.bg-color-olivedrab-2 {

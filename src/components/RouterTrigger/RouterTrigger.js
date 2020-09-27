@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import PropTypes from 'prop-types';
 import { Route, useLocation } from 'react-router';
-import { hot } from 'react-hot-loader/root';
 
 const RouterTrigger = (props) => {
 	const { triggerProp } = props;
@@ -53,4 +51,4 @@ const RouterTrigger = (props) => {
 	return <Route location={prevLocationState || location} render={() => children} />;
 }
 
-export default hot(RouterTrigger);
+export default RouterTrigger;

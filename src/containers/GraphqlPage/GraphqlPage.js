@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 //  import * as Styles from './styles';
 
 //  import GraphiQLExample from '../../components/GraphiQLExample';
-//  import LinkTest from '../../components/jestTest/LinkTest';
+//	import LinkTest from '../../components/jestTest/LinkTest';
 
 
 const GraphqlPage = () => {
@@ -11,7 +11,7 @@ const GraphqlPage = () => {
 	return (
 		<>
 
-			<Helmet title="GraphQL Page" />
+			<Helmet title="GraphiQL Page" />
 
 			{/* ---------------------------------------------- */}
 
@@ -19,7 +19,7 @@ const GraphqlPage = () => {
 
 				{/* ---------------------------------------------- */}
 
-				<h1 className="mt-4 mb-3">GraphQL Page Test!</h1>
+				<h1 className="mt-4 mb-3">GraphiQL Page And More!</h1>
 
 				{/* ---------------------------------------------- */}
 
@@ -27,8 +27,12 @@ const GraphqlPage = () => {
 					Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx11111111xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx2222222222xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx! Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?
 				</div>
 
-				<div className="mb-5 text-break">
+				<div className="mb-5">
 					Ugly now, but GraphQL Looks on the way! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?
+				</div>
+
+				<div className="mb-5">
+					{/* <LinkTest>Github</LinkTest> */}
 				</div>
 
 				<div>
