@@ -13,8 +13,8 @@ export const Footer: React.FC = () => {
 
 					<div className="flex-row-center">
 
-						<Styles.SvgFooterHeadphones>svgFooterHeadphones</Styles.SvgFooterHeadphones>
-						<Styles.FooterHeadphones>Footer Headphones</Styles.FooterHeadphones>
+						<Styles.FooterHeadphones><Styles.StyledSvgHeadphones fill="#ffffff" /></Styles.FooterHeadphones>
+						<Styles.SvgFooterHeadphones>Footer Headphones</Styles.SvgFooterHeadphones>
 
 					</div>
 

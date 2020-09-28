@@ -36,7 +36,6 @@ export const GraphiQLExample = () => {
 					return data.json().catch(() => data.text());
 				}}
 			/>
-
 		</Styles.GraphiQLExample>
 	);
 }
