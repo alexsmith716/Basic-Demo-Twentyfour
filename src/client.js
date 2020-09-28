@@ -43,7 +43,7 @@ const persistConfig = {
 		return originalState;
 	},
 	// redux-persist:
-	// whitelist: ['info', 'infoAlert', 'infoAlertThree', 'device',],
+	// whitelist: ['info', 'infoAlert', 'infoAlertThree',],
 };
 
 const spinnerContainer = document.createElement('div');
