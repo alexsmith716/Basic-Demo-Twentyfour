@@ -56,11 +56,11 @@ export const NavBar = () => {
 
 					<Styles.Toggler onClick={() => setClicked(!clicked)}>
 						{clicked && (
-							<div className="navbar-close"></div>
+							<Styles.StyledSvgTimes fill="#ffffff" />
 						)}
 
 						{!clicked && (
-							<div className="navbar-open"></div>
+							<Styles.StyledSvgBars fill="#ffffff" />
 						)}
 					</Styles.Toggler>
 
