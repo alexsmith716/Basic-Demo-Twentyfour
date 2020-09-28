@@ -12,7 +12,7 @@ import { preloadData as preloadDataAboutThree } from './containers/About/preload
 
 //  `createGlobalStyle`
 import './styled/fonts.css';
-import './theme/scss/global/styles.global.scss';
+//  import './theme/scss/global/styles.global.scss';
 
 const routes = [{
 	component: Root,

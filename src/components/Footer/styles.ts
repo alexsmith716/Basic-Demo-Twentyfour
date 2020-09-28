@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { AppColors } from '../../styled';
-import { SvgHeadphones } from '../../assets/svg/';
+import { SvgHeadphones } from '../../assets/svg';
 
 export const FooterStyled = styled.div`
 	background-color: ${AppColors.colors.syracuseOrange};
@@ -21,7 +21,7 @@ export const StyledSvgHeadphones = styled(SvgHeadphones)`
 	padding-right: .25rem;
 	padding-left: .25rem;
 	vertical-align: middle;
-`
+`;
 
 export const SvgFooterHeadphones = styled.span`
 	color: ${AppColors.colors.gold};

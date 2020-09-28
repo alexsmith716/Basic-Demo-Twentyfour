@@ -1,21 +1,23 @@
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { colors } from '../../styled/Colors';
-import { Link } from 'react-router-dom';
+import { SvgBars } from '../../assets/svg';
+import { SvgTimes } from '../../assets/svg';
 
 const NavBarBGTheme = css`
-  background-color: ${props => props.theme.navBarColor};
-`
+	background-color: ${props => props.theme.navBarColor};
+`;
 
 export const NavBar = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-  ${NavBarBGTheme}
-  height: 56px;
-  display: flex;
-  align-items: center;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+	${NavBarBGTheme}
+	height: 56px;
+	display: flex;
+	align-items: center;
 `;
 
 export const Expand = styled.div`
@@ -118,4 +120,14 @@ export const NavBarNavLink = styled(Link)`
 			background-color: #3D3D3D;
 		}
 	}
+`;
+
+export const StyledSvgBars = styled(SvgBars)`
+	height: 30px;
+	vertical-align: middle;
+`;
+
+export const StyledSvgTimes = styled(SvgTimes)`
+	height: 30px;
+	vertical-align: middle;
 `;
