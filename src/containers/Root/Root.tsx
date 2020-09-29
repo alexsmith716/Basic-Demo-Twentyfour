@@ -15,7 +15,7 @@ interface RootProps {
 };
 
 
-export const Root = ({route}: RootProps) => {
+const Root = ({route}: RootProps) => {
 
 	const themeMode = useTheme();
 
@@ -31,4 +31,6 @@ export const Root = ({route}: RootProps) => {
 				</ThemeProvider>
 		</HelmetProvider>
 	);
-};
+}
+
+export default Root;

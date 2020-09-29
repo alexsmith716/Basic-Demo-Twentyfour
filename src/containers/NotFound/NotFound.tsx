@@ -11,7 +11,7 @@ const StyledHeadingOne = styled.h1`
 `;
 
 
-export const NotFound: React.FC = () => {
+const NotFound: React.FC = () => {
 	return (
 		<NotFoundStyled>
 			<Helmet title="Page Not Found" />
@@ -25,4 +25,6 @@ export const NotFound: React.FC = () => {
 			</div>
 		</NotFoundStyled>
 	);
-};
+}
+
+export default NotFound;

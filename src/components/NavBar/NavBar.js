@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { toggleTheme } from '../../redux/modules/toggleTheme';
-import { navLinks } from './navLinks';
-import * as Styles from './styles';
+import React, { useState, useEffect, useContext } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleTheme } from "../../redux/modules/toggleTheme";
+import { navLinks } from "./navLinks";
+import * as Styles from "./styles";
 
-import { useTheme } from '../../styled/ThemeContext';
+import { useTheme } from "../../styled/ThemeContext";
 
 
-export const NavBar = () => {
+const NavBar = () => {
 
 	const themeMode = useTheme();
 
@@ -92,3 +92,5 @@ export const NavBar = () => {
 		</Styles.NavBar>
 	);
 }
+
+export default NavBar;

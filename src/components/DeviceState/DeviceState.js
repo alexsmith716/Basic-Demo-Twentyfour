@@ -1,12 +1,12 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import * as Styles from './styles';
+import React from "react";
+import { useSelector } from "react-redux";
+import * as Styles from "./styles";
 
 //  interface StateInfo {
 //    info: any
 //  }
 
-export const DeviceState = () => {
+const DeviceState = () => {
 
   //  const online = useSelector((state: StateInfo) => state.online);
 	const online = useSelector(state => state.online);
@@ -37,3 +37,5 @@ export const DeviceState = () => {
 		</div>
 	);
 }
+
+export default DeviceState;
