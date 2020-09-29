@@ -103,11 +103,12 @@ export const NavBarNavA = styled.a`
 `;
 
 export const NavBarNavLink = styled(Link)`
-	color: #adb5bd;
+
+	color: ${(props) => props.isActive ? colors.ivory : colors.grayFive};
 	text-decoration: none;
 
 	&:hover {
-		color: #e9ecef;
+		color: ${colors.grayTwo};
 	}
 
 	@media screen and (max-width: 992px) {
