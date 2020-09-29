@@ -1,20 +1,20 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import GraphiQL from 'graphiql';
-import 'graphiql/graphiql.css';
+import React, { useState, useEffect, useCallback } from "react";
+import GraphiQL from "graphiql";
+import "graphiql/graphiql.css";
+import * as Styles from "./styles";
 import { 
 	gql,
 	useQuery,
 	useMutation,
 	useApolloClient,
-} from '@apollo/client';
-import * as Styles from './styles';
+} from "@apollo/client";
 
 import {
 	fragmentTypeDroid,
 } from "../../graphql/fragments/fragments";
 
 
-export const GraphiQLExample = () => {
+const GraphiQLExample = () => {
 
 	return (
 
@@ -39,3 +39,5 @@ export const GraphiQLExample = () => {
 		</Styles.GraphiQLExample>
 	);
 }
+
+export default GraphiQLExample;

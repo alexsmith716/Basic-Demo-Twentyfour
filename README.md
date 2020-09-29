@@ -8,6 +8,8 @@ TypeScript-Website-2/packages/documentation/copy/en/handbook-v2/Object Types.md
 
 ### TO-DO:
 
+handle network errors:::
+
 server:
 `
 	import { createProxyMiddleware } from 'http-proxy-middleware';

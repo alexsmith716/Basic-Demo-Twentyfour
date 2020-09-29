@@ -1,11 +1,10 @@
-import { Root } from './containers/Root';
-import { App } from './containers/App';
-import { Home } from './containers/Home';
-import { NotFound } from './containers/NotFound';
+import Root from './containers/Root';
+import App from './containers/App';
+import Home from './containers/Home';
+import NotFound from './containers/NotFound';
 
 import About from './containers/About/Loadable';
 import GraphqlPage from './containers/GraphqlPage/Loadable';
-// import GridLayout from './containers/GridLayout/Loadable';
 
 import { preloadData as preloadDataApp } from './containers/App/preloadData';
 import { preloadData as preloadDataAboutThree } from './containers/About/preloadData';

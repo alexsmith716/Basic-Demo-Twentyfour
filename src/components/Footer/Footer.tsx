@@ -1,8 +1,8 @@
-import React from 'react';
-import * as Styles from './styles';
+import React from "react";
+import * as Styles from "./styles";
 
 
-export const Footer: React.FC = () => {
+const Footer: React.FC = () => {
 	return (
 		<Styles.FooterStyled>
 			<div className="container">
@@ -26,3 +26,5 @@ export const Footer: React.FC = () => {
 		</Styles.FooterStyled>
 	);
 }
+
+export default Footer;

@@ -1,1 +1,3 @@
-export * from './DeviceState'
+import DeviceState from "./DeviceState";
+
+export default DeviceState;

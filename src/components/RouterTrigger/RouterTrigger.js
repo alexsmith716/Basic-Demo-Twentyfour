@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Route, useLocation } from 'react-router';
+import React, { useState, useEffect } from "react";
+import { Route, useLocation } from "react-router";
 
 const RouterTrigger = (props) => {
 	const { triggerProp } = props;

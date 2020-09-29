@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import * as Styles from './styles';
 
-export const Home = () => {
+const Home = () => {
 
 	return (
 
@@ -78,3 +78,5 @@ export const Home = () => {
 		</>
 	);
 }
+
+export default Home;

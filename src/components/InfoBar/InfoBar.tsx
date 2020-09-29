@@ -1,15 +1,15 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { loadInfo } from '../../redux/modules/info';
-import { Loading } from '../Loading';
-import { Button } from '../Button';
-import * as Styles from './styles';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { loadInfo } from "../../redux/modules/info";
+import Loading from "../Loading";
+import Button from "../Button";
+import * as Styles from "./styles";
 
 interface StateInfo {
 	info: any
 }
 
-export const InfoBar = () => {
+const InfoBar = () => {
 
 	const dispatch = useDispatch();
 
@@ -71,3 +71,5 @@ export const InfoBar = () => {
 		</div>
 	);
 }
+
+export default InfoBar;

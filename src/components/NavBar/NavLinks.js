@@ -5,12 +5,12 @@ export const navLinks = [
 		linkType: 'navLink',
 	},
 	{
-		title: 'GraphqlPage',
+		title: 'Graphql Page',
 		url: '/graphqlpage',
 		linkType: 'navLink',
 	},
 	{
-		title: 'GridLayout',
+		title: 'RESTful Web Service Page',
 		url: '#',
 		linkType: 'navLink',
 	},
