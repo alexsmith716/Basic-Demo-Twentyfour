@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from "../../redux/modules/toggleTheme";
 import { navLinks } from "./navLinks";
@@ -6,10 +7,13 @@ import * as Styles from "./styles";
 
 import { useTheme } from "../../styled/ThemeContext";
 
+//  useLocation hook returns the location object that represents the current URL. 
+//  returns a new location whenever the URL changes.
 
 const NavBar = () => {
 
 	const themeMode = useTheme();
+	const location = useLocation();
 
 	// const toggledTheme = useSelector(state => state.toggleTheme.theme);
 	// const dispatch = useDispatch();
@@ -19,23 +23,18 @@ const NavBar = () => {
 	//  console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useContext(ThemeContext): ', theme);
 
 	const [clicked, setClicked] = useState(false);
+	// const [themeMode, setActiveRoute] = useState(themeMode.mode);
+	const [activeRoute, setActiveRoute] = useState(location.pathname);
 
 	useEffect(() => {
-			//  componentDidMount
-			console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentDidMount');
 
-			//  componentDidUpdate
-			if (clicked) {
-				console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentDidUpdate > clicked: ', clicked);
-			}
+			setActiveRoute(location.pathname);
 
-			//  componentWillUnmount
 			return () => {
-				//  some effects might require cleanup
 				console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentWillUnmount > cleanup phase');
 			};
 		},
-		[clicked]
+		[location.pathname]
 	);
 
 	const doThemeToggle = () => {
@@ -70,14 +69,14 @@ const NavBar = () => {
 
 							<li>
 								<Styles.NavBarNavA className="js-scroll-trigger" onClick={doThemeToggle}>
-									toggleTheme
+									use {themeMode.mode === 'dark' ? `default` : `dark`} theme
 								</Styles.NavBarNavA>
 							</li>
 
 							{ navLinks.map((item, index) => {
 								return (
 									<li key={index}>
-										<Styles.NavBarNavLink to={item.url} className="js-scroll-trigger" onClick={() => setClicked(false)}>
+										<Styles.NavBarNavLink isActive={activeRoute === item.url} to={item.url} className="js-scroll-trigger" onClick={() => setClicked(false)}>
 											{item.title}
 										</Styles.NavBarNavLink>
 									</li>
