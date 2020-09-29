@@ -97,7 +97,7 @@ module.exports = {
 					{
 						loader: 'postcss-loader',
 						options: {
-							sourceMap: true,
+							sourceMap: false,
 							config: {
 								path: 'postcss.config.js',
 							},
@@ -138,7 +138,7 @@ module.exports = {
 					{
 						loader: 'postcss-loader',
 						options: {
-							sourceMap: true,
+							sourceMap: false,
 							config: {
 								path: 'postcss.config.js',
 							},
@@ -148,7 +148,7 @@ module.exports = {
 						loader: 'sass-loader',
 						options: {
 							sassOptions: {
-								sourceMap: true,
+								sourceMap: false,
 								outputStyle: 'compressed',
 							},
 						},
