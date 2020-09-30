@@ -23,7 +23,6 @@ const NavBar = () => {
 	//  console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useContext(ThemeContext): ', theme);
 
 	const [clicked, setClicked] = useState(false);
-	// const [themeMode, setActiveRoute] = useState(themeMode.mode);
 	const [activeRoute, setActiveRoute] = useState(location.pathname);
 
 	useEffect(() => {
