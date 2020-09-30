@@ -73,7 +73,7 @@ export const NavBarNav = styled.ul`
 		left: -100%;
 
 		${props => props.clicked && css`
-			background: #343a40;
+			background: ${colors.grayEight};
 			left: 0;
 			opacity: 1;
 			z-index: 1;
@@ -97,7 +97,7 @@ export const NavBarNavA = styled.a`
 		display: table;
 
 		&:hover {
-			background-color: #3D3D3D;
+			background-color: ${colors.grayTwentyfour};
 		}
 	}
 `;
@@ -118,7 +118,7 @@ export const NavBarNavLink = styled(Link)`
 		display: table;
 
 		&:hover {
-			background-color: #3D3D3D;
+			background-color: ${colors.grayTwentyfour};
 		}
 	}
 `;

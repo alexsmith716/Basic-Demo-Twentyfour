@@ -10,7 +10,7 @@ export const navLinks = [
 		linkType: 'navLink',
 	},
 	{
-		title: 'RESTful Web Service Page',
+		title: 'RESTful Page',
 		url: '#',
 		linkType: 'navLink',
 	},
