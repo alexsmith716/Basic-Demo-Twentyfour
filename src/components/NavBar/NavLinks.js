@@ -14,4 +14,4 @@ export const navLinks = [
 		url: '#',
 		linkType: 'navLink',
 	},
-]
+];

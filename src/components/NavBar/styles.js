@@ -71,7 +71,6 @@ export const NavBarNav = styled.ul`
 		position: absolute;
 		top: 56px;
 		left: -100%;
-
 		${props => props.clicked && css`
 			background: ${colors.grayEight};
 			left: 0;
@@ -92,7 +91,7 @@ export const NavBarNavA = styled.a`
 
 	@media screen and (max-width: 992px) {
 		text-align: center;
-		padding: .5rem;
+		padding: 0.5rem;
 		width: 100%;
 		display: table;
 
@@ -103,7 +102,6 @@ export const NavBarNavA = styled.a`
 `;
 
 export const NavBarNavLink = styled(Link)`
-
 	color: ${(props) => props.isActive ? colors.ivory : colors.grayFive};
 	text-decoration: none;
 
@@ -113,7 +111,7 @@ export const NavBarNavLink = styled(Link)`
 
 	@media screen and (max-width: 992px) {
 		text-align: center;
-		padding: .5rem;
+		padding: 0.5rem;
 		width: 100%;
 		display: table;
 

@@ -1,16 +1,15 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { loadInfo } from "../../redux/modules/info";
-import Loading from "../Loading";
-import Button from "../Button";
-import * as Styles from "./styles";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { loadInfo } from '../../redux/modules/info';
+import { Loading } from '../Loading';
+import Button from '../Button';
+import * as Styles from './styles';
 
-interface StateInfo {
-	info: any
+type StateInfo = {
+	info: any;
 }
 
-const InfoBar = () => {
-
+const InfoBar: React.FC = () => {
 	const dispatch = useDispatch();
 
 	const data = useSelector((state: StateInfo) => state.info.data);
@@ -25,23 +24,18 @@ const InfoBar = () => {
 
 	const doLoadInfo = async () => {
 		try {
-			await dispatch(loadInfo())
+			await dispatch(loadInfo());
+		} catch (error) {
+			console.log(error.message);
 		}
-		catch (error) { 
-			console.log(error.message)
-		}
-	}
+	};
 
 	return (
-
 		<div className="container">
 			<Styles.InfoBarContainerBgColor className="flex-column-center mb-5">
 				<Styles.InfoBarContainer className="flex-column-center">
-
 					{/* (>>>>>>>>>>>>>>>>>>>>>> LOADING >>>>>>>>>>>>>>>>>>>>>>>>) */}
-					{loading && (
-						<Loading text="Loading" />
-					)}
+					{loading && <Loading text="Loading" />}
 
 					{/* (>>>>>>>>>>>>>>>>>>>>>> ERROR >>>>>>>>>>>>>>>>>>>>>>>>) */}
 					{error && (
@@ -55,7 +49,11 @@ const InfoBar = () => {
 					{/* (>>>>>>>>>>>>>>>>>>>>>>>> LOADED >>>>>>>>>>>>>>>>>>>>>>>>) */}
 					{!loading && (
 						<Styles.InfoBarContainerStyled className="flex-column-center">
-							<div>InfoBar message: '<Styles.DataMessage>{data ? data.message : 'no message!'}</Styles.DataMessage>'</div>
+							<div>
+								InfoBar message: &apos;
+								<Styles.DataMessage>{data ? data.message : 'no message!'}</Styles.DataMessage>
+								&apos;
+							</div>
 							<div>{data && new Date(data.time).toString()}</div>
 							<div>{data && data.timeElapsed}</div>
 
@@ -70,6 +68,6 @@ const InfoBar = () => {
 			</Styles.InfoBarContainerBgColor>
 		</div>
 	);
-}
+};
 
 export default InfoBar;

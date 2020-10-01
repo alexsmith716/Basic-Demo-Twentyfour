@@ -1,3 +1,3 @@
-import RouterTrigger from "./RouterTrigger";
+import RouterTrigger from './RouterTrigger';
 
 export default RouterTrigger;

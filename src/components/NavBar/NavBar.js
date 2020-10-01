@@ -8,7 +8,6 @@ import * as Styles from './styles';
 import { useTheme } from '../../styled/ThemeContext';
 
 const NavBar = () => {
-
 	const themeMode = useTheme();
 	const location = useLocation();
 
@@ -23,46 +22,41 @@ const NavBar = () => {
 	const [activeRoute, setActiveRoute] = useState(location.pathname);
 
 	useEffect(() => {
+		setActiveRoute(location.pathname);
 
-			setActiveRoute(location.pathname);
-
-			return () => {
-				console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentWillUnmount > cleanup phase');
-			};
-		},
-		[location.pathname]
-	);
+		return () => {
+			console.log(
+				'>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useEffect() > componentWillUnmount > cleanup phase'
+			);
+		};
+	}, [location.pathname]);
 
 	const doThemeToggle = () => {
 		// dispatch(toggleTheme(toggledTheme.themeType));
-		themeMode.toggleTheme()
+		themeMode.toggleTheme();
 		setClicked(false);
-	}
+	};
 
 	return (
-
 		<Styles.NavBar className="navbar">
-
 			<div className="container">
-
 				<Styles.Expand>
-
-					<Styles.NavBarBrandLink to='/' className="js-scroll-trigger" onClick={() => setClicked(false)}>Election App</Styles.NavBarBrandLink>
+					<Styles.NavBarBrandLink
+						to="/"
+						className="js-scroll-trigger"
+						onClick={() => setClicked(false)}
+					>
+						Election App
+					</Styles.NavBarBrandLink>
 
 					<Styles.Toggler onClick={() => setClicked(!clicked)}>
-						{clicked && (
-							<Styles.StyledSvgTimes fill="#ffffff" />
-						)}
+						{clicked && <Styles.StyledSvgTimes fill="#ffffff" />}
 
-						{!clicked && (
-							<Styles.StyledSvgBars fill="#ffffff" />
-						)}
+						{!clicked && <Styles.StyledSvgBars fill="#ffffff" />}
 					</Styles.Toggler>
 
 					<Styles.Collapse>
-
-						<Styles.NavBarNav clicked={clicked} className={ clicked ? 'clicked' : '' }>
-
+						<Styles.NavBarNav clicked={clicked} className={clicked ? 'clicked' : ''}>
 							<li>
 								<Styles.NavBarNavA className="js-scroll-trigger" onClick={doThemeToggle}>
 									use {themeMode.mode === 'dark' ? `default` : `dark`} theme
@@ -72,20 +66,23 @@ const NavBar = () => {
 							{navLinks.map((item, index) => {
 								return (
 									<li key={index}>
-										<Styles.NavBarNavLink isActive={activeRoute === item.url} to={item.url} className="js-scroll-trigger" onClick={() => setClicked(false)}>
+										<Styles.NavBarNavLink
+											isActive={activeRoute === item.url}
+											to={item.url}
+											className="js-scroll-trigger"
+											onClick={() => setClicked(false)}
+										>
 											{item.title}
 										</Styles.NavBarNavLink>
 									</li>
-								)
+								);
 							})}
-
 						</Styles.NavBarNav>
-
 					</Styles.Collapse>
 				</Styles.Expand>
 			</div>
 		</Styles.NavBar>
 	);
-}
+};
 
 export default NavBar;

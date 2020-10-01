@@ -8,18 +8,18 @@ export const FooterStyled = styled.div`
 
 export const FooterContainer = styled.div`
 	color: ${AppColors.colors.white};
-	font-family: 'LobsterV20LatinRegular';
+	font-family: "LobsterV20LatinRegular", sans-serif;
 `;
 
 export const FooterHeadphones = styled.span`
 	color: ${AppColors.colors.gold};
-	font-family: 'Norwester';
+	font-family: "Norwester", sans-serif;
 `;
 
 export const StyledSvgHeadphones = styled(SvgHeadphones)`
 	height: 16px;
-	padding-right: .25rem;
-	padding-left: .25rem;
+	padding-right: 0.25rem;
+	padding-left: 0.25rem;
 	vertical-align: middle;
 `;
 
@@ -28,5 +28,5 @@ export const SvgFooterHeadphones = styled.span`
 `;
 
 export const FooterBlurd = styled.div`
-	font-family: 'Norwester';
+	font-family: "Norwester", sans-serif;
 `;
