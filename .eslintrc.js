@@ -42,7 +42,9 @@ module.exports = {
 			],
 			parser: '@babel/eslint-parser',
 			rules: {
-				'no-unused-vars': 0
+				'no-unused-vars': 0,
+				'react-hooks/rules-of-hooks': 'error',
+				'react-hooks/exhaustive-deps': 'warn'
 			}
 		},
 		{
@@ -67,7 +69,9 @@ module.exports = {
 				'@typescript-eslint/explicit-function-return-type': 0,
 				'@typescript-eslint/no-explicit-any': 0,
 				'react/display-name': 0,
-				'react/prop-types': 0
+				'react/prop-types': 0,
+				'react-hooks/rules-of-hooks': 'error',
+				'react-hooks/exhaustive-deps': 'warn'
 			}
 		}
 	]

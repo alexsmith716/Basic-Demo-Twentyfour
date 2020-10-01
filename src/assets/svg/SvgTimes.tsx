@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface SvgTimesProps {
+type SvgTimesProps = {
 	fill?: string;
 	className?: string;
 }
