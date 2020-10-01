@@ -69,7 +69,7 @@ const NavBar = () => {
 								</Styles.NavBarNavA>
 							</li>
 
-							{ navLinks.map((item, index) => {
+							{navLinks.map((item, index) => {
 								return (
 									<li key={index}>
 										<Styles.NavBarNavLink isActive={activeRoute === item.url} to={item.url} className="js-scroll-trigger" onClick={() => setClicked(false)}>
@@ -77,7 +77,7 @@ const NavBar = () => {
 										</Styles.NavBarNavLink>
 									</li>
 								)
-							}) }
+							})}
 
 						</Styles.NavBarNav>
 

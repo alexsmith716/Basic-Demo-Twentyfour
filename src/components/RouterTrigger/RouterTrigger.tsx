@@ -18,10 +18,7 @@ const RouterTrigger: React.FC = ({ triggerProp, children }: RouterTriggerProps) 
 		`${location.pathname}${location.search}` !== `${locationState.pathname}${locationState.search}`;
 
 	if (navigated) {
-		console.log('>>>>>>>>>>>>>>>>>>>>>>>> RouterTrigger > navigated ?????????????!: ', navigated);
 		setLocationState(location);
-		setPreviousLocationState(locationState || location);
-		// initiate an effect on 'needTrigger'
 		setNeedTrigger(true);
 	}
 
@@ -34,19 +31,19 @@ const RouterTrigger: React.FC = ({ triggerProp, children }: RouterTriggerProps) 
 			triggerProp(location.pathname)
 				.catch((error: Error) =>
 					console.log(
-						'>>>>>>>>>>>>>>>>>>>>>>>> RouterTrigger useEffect() > (componentDidUpdate) > triggerProp > ERROR:',
+						'>>>>>>>>>>>>>>>>>>>>>>>> RouterTrigger useEffect() > triggerProp > ERROR:',
 						error
 					)
 				)
 				.then(() => {
-					// clear previousLocation so the next screen renders
+					// for next route, preset "new" location as "previous" location (will reflect a change)
 					setPreviousLocationState(locationState);
 				});
 		}
 
 		return () => {
 			console.log(
-				'>>>>>>>>>>>>>>>>>>>>>>>> RouterTrigger useEffect() > (componentWillUnmount) > cleanup phase'
+				'>>>>>>>>>>>>>>>>>>>>>>>> RouterTrigger useEffect() > componentWillUnmount > cleanup phase'
 			);
 		};
 	}, [needTrigger, location.pathname, locationState, triggerProp]);
