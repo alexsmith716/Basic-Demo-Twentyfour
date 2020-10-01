@@ -1,4 +1,3 @@
-
 import sum from './sum';
 
 //	https://github.com/facebook/jest/blob/master/docs/UsingMatchers.md
@@ -16,9 +15,9 @@ test('adds 1 + 2 to equal 3', () => {
 //	'toBe' uses 'Object.is' to test exact equality
 //	to check the value of an object, use 'toEqual' instead
 test('object assignment', () => {
-	const data = {one: 1};
+	const data = { one: 1 };
 	data['two'] = 2;
-	expect(data).toEqual({one: 1, two: 2});
+	expect(data).toEqual({ one: 1, two: 2 });
 });
 
 //	'toEqual' recursively checks every field of an object or array
@@ -75,16 +74,11 @@ test('but there is a "stop" in Christoph', () => {
 
 //	Arrays and iterables:
 //	check if an array or iterable contains a particular item using 'toContain'
-const shoppingList = [
-	'diapers',
-	'kleenex',
-	'trash bags',
-	'paper towels',
-	'beer',
-];
+const shoppingList = ['diapers', 'kleenex', 'trash bags', 'paper towels', 'beer'];
 
 test('the shopping list has beer on it', () => {
 	expect(shoppingList).toContain('beer');
+	/* eslint-disable-next-line no-undef */
 	expect(new Set(shoppingList)).toContain('beer');
 });
 

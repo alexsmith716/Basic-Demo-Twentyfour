@@ -11,10 +11,10 @@ export const InfoBarContainer = styled.div`
 `;
 
 export const InfoBarContainerStyled = styled.div`
-	font-family: 'PhilosopherBold';
+	font-family: "PhilosopherBold", sans-serif;
 `;
 
 export const DataMessage = styled.span`
 	color: ${AppColors.colors.firebrick};
-	font-family: 'RobotoMonoV4LatinRegular';
+	font-family: "RobotoMonoV4LatinRegular", sans-serif;
 `;

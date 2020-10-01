@@ -1,17 +1,19 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import * as React from 'react';
+import styled, { keyframes } from 'styled-components';
 
-interface LoadingProps {
-	text: string;
+export type LoadingProps = {
+	text?: string;
 }
 
 const dot = keyframes`
 	0% {
 		opacity: 0.25;
 	}
+
 	50% {
 		opacity: 0.25;
 	}
+
 	100% {
 		opacity: 1;
 	}
@@ -35,7 +37,7 @@ const DotThree = styled.span`
 	animation-delay: 0.3s;
 `;
 
-const Loading = ({ text }: LoadingProps) => {
+export const Loading: React.FC<LoadingProps> = ({ text }) => {
 	return (
 		<div>
 			{text}
@@ -44,6 +46,4 @@ const Loading = ({ text }: LoadingProps) => {
 			<DotThree>.</DotThree>
 		</div>
 	);
-}
-
-export default Loading;
+};
