@@ -1,14 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useLocation } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { toggleTheme } from "../../redux/modules/toggleTheme";
-import { navLinks } from "./navLinks";
-import * as Styles from "./styles";
+import React, { useState, useEffect, useContext } from 'react';
+import { useLocation } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleTheme } from '../../redux/modules/toggleTheme';
+import { navLinks } from './navLinks';
+import * as Styles from './styles';
 
-import { useTheme } from "../../styled/ThemeContext";
-
-//  useLocation hook returns the location object that represents the current URL. 
-//  returns a new location whenever the URL changes.
+import { useTheme } from '../../styled/ThemeContext';
 
 const NavBar = () => {
 

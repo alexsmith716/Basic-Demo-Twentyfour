@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface SvgBarsProps {
+type SvgBarsProps = {
 	fill?: string;
 	className?: string;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface SvgHeadphonesProps {
+type SvgHeadphonesProps = {
 	fill?: string;
 	className?: string;
 }

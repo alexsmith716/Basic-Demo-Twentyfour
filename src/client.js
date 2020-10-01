@@ -113,7 +113,7 @@ const providers = {
 	//    link,
 	//  });
 
-	const triggerHooks = async (_routes, pathname) => {
+	const triggerHooks = async (hydrateRoutes, pathname) => {
 		// console.log('>>>> CLIENT > triggerHooks > store.getState() 1111 ######: ', store.getState());
 		spinnerContainer.classList.add('spinner');
 
@@ -125,22 +125,22 @@ const providers = {
 		} else {
 			// Fetch mandatory data dependencies for 2nd route change onwards:
 			console.log('>>>> CLIENT > triggerHooks > window.__PRELOADED__ NO > await asyncGetPromises()');
-			await asyncGetPromises(_routes, pathname, store);
+			await asyncGetPromises(hydrateRoutes, pathname, store);
 		}
 
 		spinnerContainer.classList.remove('spinner');
 		// console.log('>>>> CLIENT > triggerHooks > store.getState() 2222 ######: ', store.getState());
 	};
 
-	const hydrate = (_routes) => {
+	const hydrate = (hydrateRoutes) => {
 		const element = (
 			<HelmetProvider>
 				<Provider store={store} {...providers}>
 					<Router history={history}>
 						<ThemeContext>
 							<ScrollToTop />
-							<RouterTrigger triggerProp={(pathname) => triggerHooks(_routes, pathname)}>
-								{renderRoutes(_routes)}
+							<RouterTrigger triggerProp={(pathname) => triggerHooks(hydrateRoutes, pathname)}>
+								{renderRoutes(hydrateRoutes)}
 							</RouterTrigger>
 						</ThemeContext>
 					</Router>
