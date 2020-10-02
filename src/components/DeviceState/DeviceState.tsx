@@ -2,15 +2,16 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import * as Styles from './styles';
 
-//  interface StateInfo {
-//    info: any
-//  }
+export type DeviceStateState = {
+  online: any;
+  userAgent: any;
+  isBot: any;
+};
 
-const DeviceState = () => {
-	//  const online = useSelector((state: StateInfo) => state.online);
-	const online = useSelector((state) => state.online);
-	const userAgent = useSelector((state) => state.device.userAgent);
-	const isBot = useSelector((state) => state.device.isBot);
+export const DeviceState: React.FC = () => {
+  const online = useSelector((state: DeviceStateState) => state.online);
+  const userAgent = useSelector((state: DeviceStateState) => state.userAgent);
+  const isBot = useSelector((state: DeviceStateState) => state.isBot);
 
 	console.log('>>>>>>>>>>>>>>>>>>>>>>>> DeviceState > online    ????: ', online);
 	console.log('>>>>>>>>>>>>>>>>>>>>>>>> DeviceState > userAgent ????: ', userAgent);
@@ -32,5 +33,3 @@ const DeviceState = () => {
 		</div>
 	);
 };
-
-export default DeviceState;
