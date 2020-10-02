@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, getAllByTestId, fireEvent } from '@testing-library/react';
-import LinkTest from './LinkTest';
+import { LinkTest } from './LinkTest';
 
 describe('LinkTest', () => {
 	test('Link changes the class when hovered', () => {
-		const { container } = render(<LinkTest page="https://github.com/">Github</LinkTest>);
+		const { container } = render(<LinkTest page="https:\/\/github.com">Github</LinkTest>);
 
 		expect(container).toMatchSnapshot();
 
@@ -19,9 +19,9 @@ describe('LinkTest', () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	// test('renders without crashing', () => {
-	//   const div = document.createElement('div');
-	//   ReactDOM.render(<App />, div);
-	//   ReactDOM.unmountComponentAtNode(div);
-	// });
+	//	test('renders without crashing', () => {
+	//		const div = document.createElement('div');
+	//		ReactDOM.render(<App />, div);
+	//		ReactDOM.unmountComponentAtNode(div);
+	//	});
 });

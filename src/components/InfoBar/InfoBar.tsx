@@ -2,14 +2,14 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { loadInfo } from '../../redux/modules/info';
 import { Loading } from '../Loading';
-import Button from '../Button';
+import { Button } from '../Button';
 import * as Styles from './styles';
 
-type StateInfo = {
+export type StateInfo = {
 	info: any;
-}
+};
 
-const InfoBar: React.FC = () => {
+export const InfoBar: React.FC = () => {
 	const dispatch = useDispatch();
 
 	const data = useSelector((state: StateInfo) => state.info.data);
@@ -69,5 +69,3 @@ const InfoBar: React.FC = () => {
 		</div>
 	);
 };
-
-export default InfoBar;
