@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Route, useLocation } from 'react-router-dom';
 
-type RouterTriggerProps = {
+export type RouterTriggerProps = {
 	triggerProp?: any;
 	children?: any;
 };
 
 //	const RouterTrigger: React.FC<{triggerProp?:any}> = ({children, triggerProp}) => {
-const RouterTrigger: React.FC = ({ triggerProp, children }: RouterTriggerProps) => {
+export const RouterTrigger: React.FC = ({ triggerProp, children }: RouterTriggerProps) => {
 	const location = useLocation();
 	const [needTrigger, setNeedTrigger] = useState(false);
 	const [locationState, setLocationState] = useState(location);
@@ -50,5 +50,3 @@ const RouterTrigger: React.FC = ({ triggerProp, children }: RouterTriggerProps) 
 
 	return <Route location={prevLocationState || location} render={() => children} />;
 };
-
-export default RouterTrigger;

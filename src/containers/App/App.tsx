@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 // import { SvgExample } from '../../components/SvgExample';
 import NavBar from '../../components/NavBar';
 import DeviceState from '../../components/DeviceState';
-import InfoBar from '../../components/InfoBar';
+import { InfoBar } from '../../components/InfoBar';
 import Footer from '../../components/Footer';
 
 interface AppProps {

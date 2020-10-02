@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 //  https://github.com/facebook/jest/blob/master/docs/TutorialReact.md
 
-const LinkTest = (page, children) => {
-	// const { page, children } = props;
+export type LinkTestProps = {
+	page?: any;
+	children?: any;
+};
+
+export const LinkTest: React.FC = ({ page, children }: LinkTestProps) => {
 	const [onMouseHoverStatus, setOnMouseHoverStatus] = useState('normal');
 
 	useEffect(() => {
@@ -41,5 +45,3 @@ const LinkTest = (page, children) => {
 		</div>
 	);
 };
-
-export default LinkTest;

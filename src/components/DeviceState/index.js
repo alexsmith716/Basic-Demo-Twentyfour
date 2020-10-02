@@ -1,3 +1,3 @@
-import DeviceState from "./DeviceState";
+import DeviceState from './DeviceState';
 
 export default DeviceState;
