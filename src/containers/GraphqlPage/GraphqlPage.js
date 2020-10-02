@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 //  import * as Styles from './styles';
 
-import GraphiQLExample from '../../components/GraphiQLExample';
+import { GraphiQLExample } from '../../components/GraphiQLExample';
 import { LinkTest } from '../../components/jestTest/LinkTest';
 
 const GraphqlPage = () => {
