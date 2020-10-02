@@ -4,8 +4,13 @@ import { colors } from '../../styled/Colors';
 import { SvgBars } from '../../assets/svg';
 import { SvgTimes } from '../../assets/svg';
 
+interface Props {
+	readonly clicked?: boolean;
+	readonly isActive?: boolean;
+}
+
 const NavBarBGTheme = css`
-	background-color: ${props => props.theme.navBarColor};
+	background-color: ${(props) => props.theme.navBarColor};
 `;
 
 export const NavBar = styled.div`
@@ -57,7 +62,7 @@ export const Collapse = styled.div`
 	align-items: center;
 `;
 
-export const NavBarNav = styled.ul`
+export const NavBarNav = styled.ul<Props>`
 	display: grid;
 	grid-template-columns: repeat(4, auto);
 	grid-gap: 15px;
@@ -71,12 +76,14 @@ export const NavBarNav = styled.ul`
 		position: absolute;
 		top: 56px;
 		left: -100%;
-		${props => props.clicked && css`
-			background: ${colors.grayEight};
-			left: 0;
-			opacity: 1;
-			z-index: 1;
-		`}
+		${(props) =>
+			props.clicked &&
+			css`
+				background: ${colors.grayEight};
+				left: 0;
+				opacity: 1;
+				z-index: 1;
+			`}
 	}
 `;
 
@@ -101,8 +108,8 @@ export const NavBarNavA = styled.a`
 	}
 `;
 
-export const NavBarNavLink = styled(Link)`
-	color: ${(props) => props.isActive ? colors.ivory : colors.grayFive};
+export const NavBarNavLink = styled(Link)<Props>`
+	color: ${(props) => (props.isActive ? colors.ivory : colors.grayFive)};
 	text-decoration: none;
 
 	&:hover {

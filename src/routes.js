@@ -1,5 +1,5 @@
 import Root from './containers/Root';
-import App from './containers/App';
+import { App } from './containers/App';
 import Home from './containers/Home';
 import NotFound from './containers/NotFound';
 

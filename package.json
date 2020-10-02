@@ -15,8 +15,8 @@
     "lint:stylelint": "stylelint './src/components/'",
 		"lint:styles:all": "stylelint '**/*.{css,scss,js,tsx}'",
 		"lint:js": "eslint ./src/server.js",
-		"lint:Root": "eslint ./src/containers/Root/Root.tsx",
-		"lint:Button": "eslint ./src/components/Button/Button.tsx",
+		"lint:App": "eslint ./src/containers/App/App.tsx",
+		"lint:DeviceState": "eslint ./src/components/DeviceState/DeviceState.tsx",
 		"lint": "yarn lint:scss && yarn lint:js",
 		"format": "prettier --config .prettierrc --write ./bin/start.js"
 	},

@@ -1,22 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { toggleTheme } from '../../redux/modules/toggleTheme';
-import { navLinks } from './navLinks';
+import { NavLinks } from './NavLinks';
 import * as Styles from './styles';
 
 import { useTheme } from '../../styled/ThemeContext';
 
-const NavBar = () => {
+export const NavBar: React.FC = () => {
 	const themeMode = useTheme();
 	const location = useLocation();
-
-	// const toggledTheme = useSelector(state => state.toggleTheme.theme);
-	// const dispatch = useDispatch();
-	// const theme = useContext(ThemeContext);
-
-	//  console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > toggledTheme: ', toggledTheme);
-	//  console.log('>>>>>>>>>>>>>>>>>>>>>>>> NavBar > useContext(ThemeContext): ', theme);
 
 	const [clicked, setClicked] = useState(false);
 	const [activeRoute, setActiveRoute] = useState(location.pathname);
@@ -32,7 +23,6 @@ const NavBar = () => {
 	}, [location.pathname]);
 
 	const doThemeToggle = () => {
-		// dispatch(toggleTheme(toggledTheme.themeType));
 		themeMode.toggleTheme();
 		setClicked(false);
 	};
@@ -63,7 +53,7 @@ const NavBar = () => {
 								</Styles.NavBarNavA>
 							</li>
 
-							{navLinks.map((item, index) => {
+							{NavLinks.map((item, index) => {
 								return (
 									<li key={index}>
 										<Styles.NavBarNavLink
@@ -84,5 +74,3 @@ const NavBar = () => {
 		</Styles.NavBar>
 	);
 };
-
-export default NavBar;
