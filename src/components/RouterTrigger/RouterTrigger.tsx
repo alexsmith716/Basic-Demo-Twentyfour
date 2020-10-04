@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Route, useLocation } from 'react-router-dom';
 
 export type RouterTriggerProps = {
-	triggerProp?: any;
-	children?: any;
+	triggerProp: (location: string) => Promise<any>;
+	children: React.ReactNode;
 };
 
-//	const RouterTrigger: React.FC<{triggerProp?:any}> = ({children, triggerProp}) => {
-export const RouterTrigger: React.FC = ({ triggerProp, children }: RouterTriggerProps) => {
+export const RouterTrigger = ({ triggerProp, children }: RouterTriggerProps) => {
 	const location = useLocation();
 	const [needTrigger, setNeedTrigger] = useState(false);
 	const [locationState, setLocationState] = useState(location);

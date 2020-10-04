@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderRoutes } from 'react-router-config';
+import { renderRoutes, RouteConfig } from 'react-router-config';
 
 import { NavBar } from '../../components/NavBar';
 import { DeviceState } from '../../components/DeviceState';
@@ -7,11 +7,12 @@ import { InfoBar } from '../../components/InfoBar';
 import Footer from '../../components/Footer';
 
 export type AppProps = {
-	route?: any;
-	children?: any;
+	route: {
+		routes: RouteConfig[];
+	};
 };
 
-export const App: React.FC = ({ route, children }: AppProps) => {
+export const App = ({ route }: AppProps) => {
 	return (
 		<>
 			{/* ------------- Navbar ------------- */}

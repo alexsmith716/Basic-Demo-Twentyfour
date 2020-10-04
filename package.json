@@ -16,7 +16,7 @@
 		"lint:styles:all": "stylelint '**/*.{css,scss,js,tsx}'",
 		"lint:js": "eslint ./src/server.js",
 		"lint:App": "eslint ./src/containers/App/App.tsx",
-		"lint:GraphiQLExample": "eslint ./src/components/GraphiQLExample/styles.tsx",
+		"lint:RouterTrigger": "eslint ./src/components/RouterTrigger/RouterTrigger.tsx",
 		"lint": "yarn lint:scss && yarn lint:js",
 		"format": "prettier --config .prettierrc --write ./bin/start.js"
 	},
