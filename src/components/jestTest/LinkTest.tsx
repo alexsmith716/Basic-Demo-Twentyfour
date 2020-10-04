@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 //  https://github.com/facebook/jest/blob/master/docs/TutorialReact.md
 
-export type LinkTestProps = {
+export type Props = {
 	page?: any;
 	children?: any;
 };
 
-export const LinkTest: React.FC = ({ page, children }: LinkTestProps) => {
+export const LinkTest: React.FC = ({ page, children }: Props) => {
 	const [onMouseHoverStatus, setOnMouseHoverStatus] = useState('normal');
 
 	useEffect(() => {

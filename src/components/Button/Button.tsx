@@ -1,19 +1,13 @@
 import React from 'react';
 
-export type ButtonProps = {
-	className?: any;
-	onClick?: any;
-	type?: any;
-	children?: any;
+export type Props = {
+	className?: string;
+	onClick?: () => void;
+	type?: 'button' | 'submit' | 'reset' | undefined;
+	children?: React.ReactNode;
 };
 
-//  export const Button: React.FC = ({
-//  	className = 'btn-primary',
-//  	onClick,
-//  	type = 'button',
-//  	children,
-//  }: ButtonProps) => {
-export const Button: React.FC<ButtonProps> = ({ className = 'btn-primary', onClick, type = 'button', children }) => {
+export const Button: React.FC<Props> = ({ className = 'btn-primary', onClick, type, children }: Props) => {
 	return (
 		<button className={`btn ${className}`} onClick={onClick} type={type}>
 			{children}

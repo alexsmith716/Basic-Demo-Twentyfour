@@ -2,7 +2,6 @@
 
 ### UPDATE:
 
-const S = async (): Promise<any> => {}
 https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts
 https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react-router/index.d.ts
 https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react-router-dom/index.d.ts
