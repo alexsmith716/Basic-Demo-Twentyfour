@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-export type LoadingProps = {
-	text?: string;
-}
+export type Props = {
+	text: string;
+};
 
 const dot = keyframes`
 	0% {
@@ -37,7 +37,7 @@ const DotThree = styled.span`
 	animation-delay: 0.3s;
 `;
 
-export const Loading: React.FC<LoadingProps> = ({ text }) => {
+export const Loading: React.FC<Props> = ({ text }: Props) => {
 	return (
 		<div>
 			{text}

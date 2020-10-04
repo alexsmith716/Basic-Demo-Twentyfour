@@ -12,12 +12,10 @@
 		"check-types-t": "tsc --traceResolution",
 		"check-types-w": "tsc --watch",
 		"check-types": "tsc --noEmit true",
-    "lint:stylelint": "stylelint './src/components/'",
-		"lint:styles:all": "stylelint '**/*.{css,scss,js,tsx}'",
-		"lint:js": "eslint ./src/server.js",
+    "lint:styles": "stylelint src/components/**/*.{css,scss,js,tsx}",
+    "lint:js": "eslint src/components/**/*.{js,ts,tsx}",
 		"lint:App": "eslint ./src/containers/App/App.tsx",
-		"lint:RouterTrigger": "eslint ./src/components/RouterTrigger/RouterTrigger.tsx",
-		"lint": "yarn lint:scss && yarn lint:js",
+		"lint:Button": "eslint ./src/components/Button/Button.tsx",
 		"format": "prettier --config .prettierrc --write ./bin/start.js"
 	},
 	"dependencies": {
