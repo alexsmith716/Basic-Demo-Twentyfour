@@ -1,20 +1,26 @@
-// Actions
-// -------------------
 const LOAD = 'redux-example/infoAlertThree/LOAD';
 const LOAD_SUCCESS = 'redux-example/infoAlertThree/LOAD_SUCCESS';
 const LOAD_FAIL = 'redux-example/infoAlertThree/LOAD_FAIL';
 
 import { postRequestConcatExportASYNC } from '../../utils/mockAPI';
 
-const initialState = {
+//  export type State = {
+//  	loading: boolean;
+//  	loaded: boolean,
+//  	error: true | null;
+//  	errorResponse: any;
+//  	data: any;
+//  };
+
+export const initialState = {
+	loading: false,
 	loaded: false,
+	error: null,
+	errorResponse: null,
 	data: null,
 };
 
-// Reducer
-// -------------------
-export default function reducer(state = initialState, action = {}) {
-
+export const reducer = (state = initialState, action = {}) => {
 	switch (action.type) {
 
 		case LOAD:
@@ -52,8 +58,6 @@ export default function reducer(state = initialState, action = {}) {
 	}
 }
 
-// Actions (action creators)
-// -------------------
 export function isLoaded(globalState) {
 	return globalState.infoAlertThree && globalState.infoAlertThree.loaded;
 }

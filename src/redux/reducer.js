@@ -1,7 +1,7 @@
 import device from './modules/device';
-import info from './modules/info';
-import infoAlert from './modules/infoAlert';
-import infoAlertThree from './modules/infoAlertThree';
+import { reducer as info} from './modules/info';
+import { reducer as infoAlert} from './modules/infoAlert';
+import { reducer as infoAlertThree} from './modules/infoAlertThree';
 import toggleTheme from './modules/toggleTheme';
 
 

@@ -6,7 +6,7 @@ export type Props = {
 	children: React.ReactNode;
 };
 
-export const RouterTrigger: React.FC<Props> = ({ triggerProp, children }: Props) => {
+export const RouterTrigger: React.FC<Props> = ({ triggerProp, children }) => {
 	const location = useLocation();
 	const [needTrigger, setNeedTrigger] = useState(false);
 	const [locationState, setLocationState] = useState(location);

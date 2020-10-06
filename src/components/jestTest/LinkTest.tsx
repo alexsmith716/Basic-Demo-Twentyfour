@@ -7,7 +7,7 @@ export type Props = {
 	children?: any;
 };
 
-export const LinkTest: React.FC = ({ page, children }: Props) => {
+export const LinkTest: React.FC<Props> = ({ page, children }) => {
 	const [onMouseHoverStatus, setOnMouseHoverStatus] = useState('normal');
 
 	useEffect(() => {
