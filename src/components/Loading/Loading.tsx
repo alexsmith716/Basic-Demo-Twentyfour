@@ -37,7 +37,7 @@ const DotThree = styled.span`
 	animation-delay: 0.3s;
 `;
 
-export const Loading: React.FC<Props> = ({ text }: Props) => {
+export const Loading: React.FC<Props> = ({ text }) => {
 	return (
 		<div>
 			{text}

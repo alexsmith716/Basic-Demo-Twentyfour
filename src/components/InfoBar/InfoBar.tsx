@@ -5,17 +5,22 @@ import { Loading } from '../Loading';
 import { Button } from '../Button';
 import * as Styles from './styles';
 
-export type StateInfo = {
-	info: any;
+export type State = {
+	info: {
+		loading: boolean;
+		error: Error | null;
+		errorResponse: any;
+		data: any;
+	};
 };
 
 export const InfoBar: React.FC = () => {
 	const dispatch = useDispatch();
 
-	const data = useSelector((state: StateInfo) => state.info.data);
-	const loading = useSelector((state: StateInfo) => state.info.loading);
-	const error = useSelector((state: StateInfo) => state.info.error);
-	const errorResponse = useSelector((state: StateInfo) => state.info.errorResponse);
+	const loading = useSelector((state: State) => state.info.loading);
+	const error = useSelector((state: State) => state.info.error);
+	const errorResponse = useSelector((state: State) => state.info.errorResponse);
+	const data = useSelector((state: State) => state.info.data);
 
 	console.log('>>>>>>>>>>>>>>>>>>>>>>>> InfoBar > data					????: ', data);
 	console.log('>>>>>>>>>>>>>>>>>>>>>>>> InfoBar > loading				????: ', loading);
